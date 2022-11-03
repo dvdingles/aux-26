@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/3D JUVER.gltf");
+  const { nodes, materials } = useGLTF("/4D JUVER.gltf");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -14,32 +14,27 @@ export function Dav(props) {
         receiveShadow
         geometry={nodes.Sphere.geometry}
         material={materials["Material.001"]}
-        position={[0, 0.23, 0]}
-        rotation={[0, -0.01, 0]}
-        scale={0.01}
       />
-      <group position={[-0.02, 0.14, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["_1_ARD-geom"].geometry}
-          material={materials._1_ARD_front}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["_1_ARD-geom_1"].geometry}
-          material={materials._1_ARD_back}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["_1_ARD-geom_2"].geometry}
-          material={materials._1_ARD_edge}
-        />
-      </group>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["_1_ARD-geom"].geometry}
+        material={materials._1_ARD_front}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["_1_ARD-geom_1"].geometry}
+        material={materials._1_ARD_back}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["_1_ARD-geom_2"].geometry}
+        material={materials._1_ARD_edge}
+      />
     </group>
   );
 }
 
-useGLTF.preload("/3D JUVER.gltf");
+useGLTF.preload("/4D JUVER.gltf");
