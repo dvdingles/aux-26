@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/4D JUVER.gltf");
+  const { nodes, materials } = useGLTF("/5D JUVER.gltf");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -37,4 +37,4 @@ export function Dav(props) {
   );
 }
 
-useGLTF.preload("/4D JUVER.gltf");
+useGLTF.preload("/5D JUVER.gltf");
